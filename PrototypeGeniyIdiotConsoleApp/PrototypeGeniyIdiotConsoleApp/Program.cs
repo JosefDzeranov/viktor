@@ -7,6 +7,7 @@ namespace PrototypeGeniyIdiotConsoleApp
     {
         static void Main(string[] args)
         {
+            // добавил комментарий для теста коммитов
             Console.WriteLine("Как Вас зовут?");
             string name = Console.ReadLine();
 
