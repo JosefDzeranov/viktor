@@ -108,6 +108,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeniyIdiot.Common\GeniyIdiot.Common.csproj">
+      <Project>{932e2c74-b56f-4546-a43d-602808f4531e}</Project>
+      <Name>GeniyIdiot.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PrototypeGeniyIdiotConsoleApp\PrototypeGeniyIdiotConsoleApp.csproj">
       <Project>{a49858c2-1755-4e1b-a858-6f354b1397d3}</Project>
       <Name>PrototypeGeniyIdiotConsoleApp</Name>

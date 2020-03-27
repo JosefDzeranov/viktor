@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using PrototypeGeniyIdiotConsoleApp;
 using System.Diagnostics;
+using GeniyIdiot.Common;
 
 namespace GeniyIdiotWindowsFormsApp
 {

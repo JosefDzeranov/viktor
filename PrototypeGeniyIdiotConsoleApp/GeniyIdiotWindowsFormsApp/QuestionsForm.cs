@@ -1,4 +1,5 @@
-﻿using PrototypeGeniyIdiotConsoleApp;
+﻿using GeniyIdiot.Common;
+using PrototypeGeniyIdiotConsoleApp;
 using System;
 using System.Windows.Forms;
 
