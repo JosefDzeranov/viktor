@@ -2,7 +2,6 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using PrototypeGeniyIdiotConsoleApp;
 using System.Diagnostics;
 using GeniyIdiot.Common;
 

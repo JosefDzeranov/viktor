@@ -1,4 +1,4 @@
-﻿namespace PrototypeGeniyIdiotConsoleApp
+﻿namespace GeniyIdiot.Common
 {
     public class User
     {

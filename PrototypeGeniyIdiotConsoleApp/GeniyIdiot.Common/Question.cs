@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PrototypeGeniyIdiotConsoleApp
+namespace GeniyIdiot.Common
 {
     public class Question
     {
@@ -29,5 +29,5 @@ namespace PrototypeGeniyIdiotConsoleApp
             };
             return questions;
         }
-    } 
+    }
 }
