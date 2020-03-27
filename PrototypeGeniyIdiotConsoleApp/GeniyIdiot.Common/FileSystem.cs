@@ -22,5 +22,10 @@ namespace GeniyIdiot.Common
                 return outputFile.ReadToEnd();
             }
         }
+
+        public static bool IsExists(string fileName)
+        {
+            return File.Exists(Path.Combine(docPath, fileName));
+        }
     }
 }
