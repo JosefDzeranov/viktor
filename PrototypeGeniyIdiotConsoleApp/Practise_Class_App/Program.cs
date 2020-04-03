@@ -6,7 +6,8 @@ namespace Practise_Class_App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Point point = new Point(2,3);
+            Console.WriteLine(point.Print());
         }
     }
 }
