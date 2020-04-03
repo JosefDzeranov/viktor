@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeGeniyIdiotConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniyIdiotWindowsFormsApp", "GeniyIdiotWindowsFormsApp\GeniyIdiotWindowsFormsApp.csproj", "{BF7F6176-07EE-4F20-86B4-7A31C005095F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practise_Class_App", "Practise_Class_App\Practise_Class_App.csproj", "{7B9D6EA6-2D4B-4C29-A3E7-8A3C1634F232}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF7F6176-07EE-4F20-86B4-7A31C005095F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF7F6176-07EE-4F20-86B4-7A31C005095F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF7F6176-07EE-4F20-86B4-7A31C005095F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9D6EA6-2D4B-4C29-A3E7-8A3C1634F232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9D6EA6-2D4B-4C29-A3E7-8A3C1634F232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9D6EA6-2D4B-4C29-A3E7-8A3C1634F232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9D6EA6-2D4B-4C29-A3E7-8A3C1634F232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
