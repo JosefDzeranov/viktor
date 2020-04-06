@@ -7,7 +7,7 @@ namespace Practise_Class_App
         static void Main(string[] args)
         {
             Point point = new Point(2, 3);
-            Console.WriteLine(point.Print());
+            //Console.WriteLine(point.Print());
 
             Point point1 = new Point(1, 1);
             Point point2 = new Point(2, 1);
@@ -30,12 +30,23 @@ namespace Practise_Class_App
             rectangle.Line2 = line2;
             rectangle.Line3 = line4;
             rectangle.Line4 = line5;
-
-            Console.WriteLine(line1.Lenght());
-            Console.WriteLine(line1.Print());
-            Console.WriteLine(triangle.Perimetr());
-            Console.WriteLine(rectangle.Perimetr());
-            Console.WriteLine(rectangle.Square());
+  
+            //Console.WriteLine(line1.Lenght());
+            //Console.WriteLine(line1.Print());
+            //Console.WriteLine(triangle.Perimetr());
+            //Console.WriteLine(rectangle.Perimetr());
+            //Console.WriteLine(rectangle.Square());
+            
+            Fraction decimal1 = new Fraction(2, 5);
+            Fraction decimal2 = new Fraction(8, 5);
+            var decimalSum = Fraction.Summation(decimal1, decimal2);
+            var decimalDed = Fraction.Deduction(decimal1, decimal2);
+            var decimalMult = Fraction.Multiplication(decimal1, decimal2);
+            var decimalSepar = Fraction.Separation(decimal1, decimal2);
+            Console.WriteLine(decimalSum.ConvertToDecimal().ToString());
+            Console.WriteLine(decimalDed.ConvertToDecimal().ToString());
+            Console.WriteLine(decimalMult.Print());
+            Console.WriteLine(decimalSepar.Print());
         }
     }
 }
