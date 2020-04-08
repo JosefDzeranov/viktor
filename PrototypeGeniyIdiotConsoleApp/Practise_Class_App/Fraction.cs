@@ -13,22 +13,23 @@ namespace Practise_Class_App
         {
             Numerator = numerator;
             Denominator = denomitator;
+            Normalize();
         }
         public  Fraction Summation(Fraction fraction)
         {
-            return new Fraction(fraction.Numerator * Denominator + Numerator * fraction.Denominator, fraction.Denominator * Denominator).Normalize();
+            return new Fraction(Numerator * fraction.Denominator + fraction.Numerator * Denominator, Denominator * fraction.Denominator);
         }
         public Fraction Deduction(Fraction fraction)
         {
-            return new Fraction(fraction.Numerator * Denominator - Numerator * fraction.Denominator, fraction.Denominator * Denominator).Normalize();
+            return new Fraction(Numerator *  fraction.Denominator -  fraction.Numerator * Denominator, Denominator * fraction.Denominator);
         }
         public Fraction Multiplication(Fraction fraction)
         {
-            return new Fraction(Numerator * fraction.Numerator, Denominator * fraction.Denominator).Normalize();
+            return new Fraction(Numerator * fraction.Numerator, Denominator * fraction.Denominator);
         }
         public Fraction Separation(Fraction fraction)
         {
-            return new Fraction(Numerator * fraction.Denominator, fraction.Numerator * Denominator).Normalize();
+            return new Fraction(Numerator * fraction.Denominator, fraction.Numerator * Denominator);
         }
 
         private static int GCD(int m, int n) //Greatest Common Divizior
@@ -63,7 +64,7 @@ namespace Practise_Class_App
             return this;
         }
 
-        public double ConvertToDecimal()
+        public double ConvertToDouble()
         {
             return Numerator / (double)Denominator;
         }

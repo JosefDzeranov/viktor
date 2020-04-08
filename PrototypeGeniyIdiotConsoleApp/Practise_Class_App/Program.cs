@@ -28,8 +28,8 @@ namespace Practise_Class_App
             
             Fraction fraction1 = new Fraction(2, 5);
             Fraction fraction2 = new Fraction(8, 5);
-            Console.WriteLine(fraction1.Summation(fraction2).ConvertToDecimal().ToString());
-            Console.WriteLine(fraction1.Deduction(fraction2).ConvertToDecimal().ToString());
+            Console.WriteLine(fraction1.Summation(fraction2).ConvertToDouble().ToString());
+            Console.WriteLine(fraction1.Deduction(fraction2).ConvertToDouble().ToString());
             Console.WriteLine(fraction1.Separation(fraction2).Print());
             Console.WriteLine(fraction1.Multiplication(fraction2).Print());
         }

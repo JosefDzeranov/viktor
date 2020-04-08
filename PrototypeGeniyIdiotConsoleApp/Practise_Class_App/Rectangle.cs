@@ -18,11 +18,11 @@ namespace Practise_Class_App
             Point2 = point2;
             Point3 = point3;
             Point4 = point4;
+            line1 = new Line(Point1, Point2);
+            line2 = new Line(Point2, Point3);
         }
         public double Perimetr()
         {
-            line1 = new Line(Point1, Point2);
-            line2 = new Line(Point2, Point3);
             return 2 * (line1.Lenght() + line2.Lenght());
         }
 
