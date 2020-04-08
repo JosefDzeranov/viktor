@@ -9,9 +9,6 @@ namespace Practise_Class_App
         public Point Point1;
         public Point Point2;
         public Point Point3;
-        public Line Line1;
-        public Line Line2;
-        public Line Line3;
 
         public Triangle(Point point1, Point point2, Point point3)
         {
@@ -22,7 +19,10 @@ namespace Practise_Class_App
 
         public double Perimetr()
         {
-           return Line1.Lenght() + Line2.Lenght() + Line3.Lenght();
+            Line line1 = new Line(Point1, Point2);
+            Line line2 = new Line(Point2, Point3);
+            Line line3 = new Line(Point3, Point1);
+            return line1.Lenght() + line2.Lenght() + line3.Lenght();
         }
 
         public string Print()

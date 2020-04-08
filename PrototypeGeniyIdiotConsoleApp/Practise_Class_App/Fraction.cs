@@ -14,21 +14,21 @@ namespace Practise_Class_App
             Numerator = numerator;
             Denominator = denomitator;
         }
-        public static Fraction Summation(Fraction decimal1, Fraction decimal2)
+        public  Fraction Summation(Fraction fraction)
         {
-            return new Fraction(decimal2.Numerator * decimal1.Denominator + decimal1.Numerator * decimal2.Denominator, decimal2.Denominator * decimal1.Denominator).Normalize();
+            return new Fraction(fraction.Numerator * Denominator + Numerator * fraction.Denominator, fraction.Denominator * Denominator).Normalize();
         }
-        public static Fraction Deduction(Fraction decimal1, Fraction decimal2)
+        public Fraction Deduction(Fraction fraction)
         {
-            return new Fraction(decimal2.Numerator * decimal1.Denominator - decimal1.Numerator * decimal2.Denominator, decimal2.Denominator * decimal1.Denominator).Normalize();
+            return new Fraction(fraction.Numerator * Denominator - Numerator * fraction.Denominator, fraction.Denominator * Denominator).Normalize();
         }
-        public static Fraction Multiplication(Fraction decimal1, Fraction decimal2)
+        public Fraction Multiplication(Fraction fraction)
         {
-            return new Fraction(decimal1.Numerator * decimal2.Numerator, decimal1.Denominator * decimal2.Denominator).Normalize();
+            return new Fraction(Numerator * fraction.Numerator, Denominator * fraction.Denominator).Normalize();
         }
-        public static Fraction Separation(Fraction decimal1, Fraction decimal2)
+        public Fraction Separation(Fraction fraction)
         {
-            return new Fraction(decimal1.Numerator * decimal2.Denominator, decimal2.Numerator * decimal1.Denominator).Normalize();
+            return new Fraction(Numerator * fraction.Denominator, fraction.Numerator * Denominator).Normalize();
         }
 
         private static int GCD(int m, int n) //Greatest Common Divizior

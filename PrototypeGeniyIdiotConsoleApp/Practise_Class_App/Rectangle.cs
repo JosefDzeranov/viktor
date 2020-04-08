@@ -10,11 +10,8 @@ namespace Practise_Class_App
         public Point Point2;
         public Point Point3;
         public Point Point4;
-        public Line Line1;
-        public Line Line2;
-        public Line Line3;
-        public Line Line4;
-
+        Line line1;
+        Line line2;
         public Rectangle(Point point1, Point point2, Point point3, Point point4)
         {
             Point1 = point1;
@@ -24,12 +21,14 @@ namespace Practise_Class_App
         }
         public double Perimetr()
         {
-            return 2 * (Line1.Lenght() + Line2.Lenght());
+            line1 = new Line(Point1, Point2);
+            line2 = new Line(Point2, Point3);
+            return 2 * (line1.Lenght() + line2.Lenght());
         }
 
         public double Square()
         {
-            return Line1.Lenght() * Line2.Lenght();
+            return line1.Lenght() * line2.Lenght();
         }
     }
 }

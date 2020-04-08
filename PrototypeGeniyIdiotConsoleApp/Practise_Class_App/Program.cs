@@ -15,38 +15,23 @@ namespace Practise_Class_App
             Point point4 = new Point(1, 1);
 
             Line line1 = new Line(point1, point2);
-            Line line2 = new Line(point2, point3);
-            Line line3 = new Line(point3, point1);
 
             Triangle triangle = new Triangle(point1, point1, point3);
-            triangle.Line1 = line1;
-            triangle.Line2 = line2;
-            triangle.Line3 = line3;
 
             Rectangle rectangle = new Rectangle(point1, point1, point3, point4);
-            Line line4 = new Line(point3, point4);
-            Line line5 = new Line(point4, point1);
-            rectangle.Line1 = line1;
-            rectangle.Line2 = line2;
-            rectangle.Line3 = line4;
-            rectangle.Line4 = line5;
   
-            //Console.WriteLine(line1.Lenght());
-            //Console.WriteLine(line1.Print());
-            //Console.WriteLine(triangle.Perimetr());
-            //Console.WriteLine(rectangle.Perimetr());
-            //Console.WriteLine(rectangle.Square());
+            Console.WriteLine(line1.Lenght());
+            Console.WriteLine(line1.Print());
+            Console.WriteLine(triangle.Perimetr());
+            Console.WriteLine(rectangle.Perimetr());
+            Console.WriteLine(rectangle.Square());
             
-            Fraction decimal1 = new Fraction(2, 5);
-            Fraction decimal2 = new Fraction(8, 5);
-            var decimalSum = Fraction.Summation(decimal1, decimal2);
-            var decimalDed = Fraction.Deduction(decimal1, decimal2);
-            var decimalMult = Fraction.Multiplication(decimal1, decimal2);
-            var decimalSepar = Fraction.Separation(decimal1, decimal2);
-            Console.WriteLine(decimalSum.ConvertToDecimal().ToString());
-            Console.WriteLine(decimalDed.ConvertToDecimal().ToString());
-            Console.WriteLine(decimalMult.Print());
-            Console.WriteLine(decimalSepar.Print());
+            Fraction fraction1 = new Fraction(2, 5);
+            Fraction fraction2 = new Fraction(8, 5);
+            Console.WriteLine(fraction1.Summation(fraction2).ConvertToDecimal().ToString());
+            Console.WriteLine(fraction1.Deduction(fraction2).ConvertToDecimal().ToString());
+            Console.WriteLine(fraction1.Separation(fraction2).Print());
+            Console.WriteLine(fraction1.Multiplication(fraction2).Print());
         }
     }
 }
