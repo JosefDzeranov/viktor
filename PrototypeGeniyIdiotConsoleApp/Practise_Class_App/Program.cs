@@ -27,7 +27,7 @@ namespace Practise_Class_App
             Console.WriteLine(rectangle.Square());
             
             Fraction fraction1 = new Fraction(2, 5);
-            Fraction fraction2 = new Fraction(8, 5);
+            Fraction fraction2 = new Fraction(1, 5);
             Console.WriteLine(fraction1.Summation(fraction2).ConvertToDouble().ToString());
             Console.WriteLine(fraction1.Deduction(fraction2).ConvertToDouble().ToString());
             Console.WriteLine(fraction1.Separation(fraction2).Print());

@@ -17,7 +17,7 @@ namespace Practise_Class_App
         }
         public  Fraction Summation(Fraction fraction)
         {
-            return new Fraction(Numerator * fraction.Denominator + fraction.Numerator * Denominator, Denominator * fraction.Denominator);
+            return new Fraction(Numerator * fraction.Denominator + fraction.Numerator * Denominator, Denominator * Denominator);
         }
         public Fraction Deduction(Fraction fraction)
         {
