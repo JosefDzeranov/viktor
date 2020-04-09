@@ -7,8 +7,8 @@ namespace PrototypeGeniyIdiotConsoleApp
     public class Program
     {
         const string statisticsFileName = "Statistics.txt";
-        private Game game;
-        public void Main(string[] args)
+        private static Game game;
+        static void Main(string[] args)
         {
             Initialization();
             while (true)
@@ -59,7 +59,7 @@ namespace PrototypeGeniyIdiotConsoleApp
                 { }
             }
         }
-        public bool PostGameFlow()
+        public static bool PostGameFlow()
         {
             Console.WriteLine("Вывести статистику игр? (введите: да/нет)");
             var yes = CheckAnswer(Console.ReadLine());
