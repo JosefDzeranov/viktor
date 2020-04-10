@@ -28,58 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rightAnswersCountLabel = new System.Windows.Forms.Label();
-            this.userNameLabel = new System.Windows.Forms.Label();
-            this.diagnoseLabel = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // rightAnswersCountLabel
+            // listView1
             // 
-            this.rightAnswersCountLabel.AutoSize = true;
-            this.rightAnswersCountLabel.Location = new System.Drawing.Point(297, 49);
-            this.rightAnswersCountLabel.Name = "rightAnswersCountLabel";
-            this.rightAnswersCountLabel.Size = new System.Drawing.Size(173, 13);
-            this.rightAnswersCountLabel.TabIndex = 0;
-            this.rightAnswersCountLabel.Text = "Количество правильных ответов";
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(568, 442);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // userNameLabel
+            // columnHeader1
             // 
-            this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Location = new System.Drawing.Point(78, 49);
-            this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(103, 13);
-            this.userNameLabel.TabIndex = 1;
-            this.userNameLabel.Text = "Имя пользователя";
+            this.columnHeader1.Text = "Имя пользователя";
+            this.columnHeader1.Width = 150;
             // 
-            // diagnoseLabel
+            // columnHeader2
             // 
-            this.diagnoseLabel.AutoSize = true;
-            this.diagnoseLabel.Location = new System.Drawing.Point(602, 48);
-            this.diagnoseLabel.Name = "diagnoseLabel";
-            this.diagnoseLabel.Size = new System.Drawing.Size(51, 13);
-            this.diagnoseLabel.TabIndex = 2;
-            this.diagnoseLabel.Text = "Диагноз";
+            this.columnHeader2.Text = "Кол-во правильных ответов";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Диагноз";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 150;
             // 
             // StatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.diagnoseLabel);
-            this.Controls.Add(this.userNameLabel);
-            this.Controls.Add(this.rightAnswersCountLabel);
+            this.ClientSize = new System.Drawing.Size(568, 442);
+            this.Controls.Add(this.listView1);
             this.Name = "StatisticsForm";
             this.Text = "Форма Статистики";
-            //this.Load += new System.EventHandler(this.StatisticsForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label rightAnswersCountLabel;
-        private System.Windows.Forms.Label userNameLabel;
-        private System.Windows.Forms.Label diagnoseLabel;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

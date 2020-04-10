@@ -17,29 +17,22 @@ namespace GeniyIdiotWindowsFormsApp
         public void QuestionForm_Load()
         {
             questionFormLabel.Text = "Введите вопрос";
-            answerQuestionFormButton.Enabled = false;
-            answerQuestionFormButton.Visible = false;
+            
 
         }
         public void questionFormbutton_Click(object sender, EventArgs e)
         {
-            if (questionFormTextBox.Text == "")
+            if (questionFormTextBox.Text == "" || answerFormtextBox.Text == "")
             {
-                MessageBox.Show("Введите вопрос!");
+                MessageBox.Show("Заполните поля \"Вопрос-Ответ\" ");
                 return;
             }
             question = questionFormTextBox.Text;
-            questionFormLabel.Text = "Введите ответ";
-            answerQuestionFormButton.Enabled = true;
-            answerQuestionFormButton.Visible = true;
-        }
-
-        public void answerQuestionFormButton_Click(object sender, EventArgs e)
-        {
-            answer = questionFormTextBox.Text;
+            answer = answerFormtextBox.Text;
             FileSystem.SaveString(question + '$' + answer, "Questions.txt");
             MessageBox.Show("Вопрос добавлен и сохранен");
             Close();
+
         }
     }
 }

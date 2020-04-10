@@ -31,7 +31,8 @@
             this.questionFormTextBox = new System.Windows.Forms.TextBox();
             this.questionQuestionFormButton = new System.Windows.Forms.Button();
             this.questionFormLabel = new System.Windows.Forms.Label();
-            this.answerQuestionFormButton = new System.Windows.Forms.Button();
+            this.answerFormtextBox = new System.Windows.Forms.TextBox();
+            this.answerFormlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // questionFormTextBox
@@ -43,7 +44,7 @@
             // 
             // questionQuestionFormButton
             // 
-            this.questionQuestionFormButton.Location = new System.Drawing.Point(70, 178);
+            this.questionQuestionFormButton.Location = new System.Drawing.Point(181, 183);
             this.questionQuestionFormButton.Name = "questionQuestionFormButton";
             this.questionQuestionFormButton.Size = new System.Drawing.Size(75, 23);
             this.questionQuestionFormButton.TabIndex = 1;
@@ -56,26 +57,33 @@
             this.questionFormLabel.AutoSize = true;
             this.questionFormLabel.Location = new System.Drawing.Point(67, 68);
             this.questionFormLabel.Name = "questionFormLabel";
-            this.questionFormLabel.Size = new System.Drawing.Size(57, 13);
+            this.questionFormLabel.Size = new System.Drawing.Size(91, 13);
             this.questionFormLabel.TabIndex = 2;
-            this.questionFormLabel.Text = "Действие";
+            this.questionFormLabel.Text = "Введите вопрос:";
             // 
-            // answerQuestionFormButton
+            // answerFormtextBox
             // 
-            this.answerQuestionFormButton.Location = new System.Drawing.Point(70, 178);
-            this.answerQuestionFormButton.Name = "answerQuestionFormButton";
-            this.answerQuestionFormButton.Size = new System.Drawing.Size(75, 23);
-            this.answerQuestionFormButton.TabIndex = 3;
-            this.answerQuestionFormButton.Text = "Отправить";
-            this.answerQuestionFormButton.UseVisualStyleBackColor = true;
-            this.answerQuestionFormButton.Click += new System.EventHandler(this.answerQuestionFormButton_Click);
+            this.answerFormtextBox.Location = new System.Drawing.Point(269, 121);
+            this.answerFormtextBox.Name = "answerFormtextBox";
+            this.answerFormtextBox.Size = new System.Drawing.Size(100, 20);
+            this.answerFormtextBox.TabIndex = 3;
+            // 
+            // answerFormlabel
+            // 
+            this.answerFormlabel.AutoSize = true;
+            this.answerFormlabel.Location = new System.Drawing.Point(266, 68);
+            this.answerFormlabel.Name = "answerFormlabel";
+            this.answerFormlabel.Size = new System.Drawing.Size(83, 13);
+            this.answerFormlabel.TabIndex = 4;
+            this.answerFormlabel.Text = "Введите ответ:";
             // 
             // QuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 272);
-            this.Controls.Add(this.answerQuestionFormButton);
+            this.ClientSize = new System.Drawing.Size(422, 263);
+            this.Controls.Add(this.answerFormlabel);
+            this.Controls.Add(this.answerFormtextBox);
             this.Controls.Add(this.questionFormLabel);
             this.Controls.Add(this.questionQuestionFormButton);
             this.Controls.Add(this.questionFormTextBox);
@@ -91,6 +99,7 @@
         private System.Windows.Forms.TextBox questionFormTextBox;
         private System.Windows.Forms.Button questionQuestionFormButton;
         private System.Windows.Forms.Label questionFormLabel;
-        private System.Windows.Forms.Button answerQuestionFormButton;
+        private System.Windows.Forms.TextBox answerFormtextBox;
+        private System.Windows.Forms.Label answerFormlabel;
     }
 }
