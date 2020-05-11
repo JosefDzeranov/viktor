@@ -5,41 +5,43 @@ namespace BallsWindowsFormsApp
 {
     class Ball
     {
-        public int X = 100;
-        public int Y = 100;
-        public Brush Brush = Brushes.Green;
-        public MainForm Form;
+        protected int x = 100;
+        protected int y = 100;
+        protected int vx = 10;
+        protected int vy = 10;
+        protected Random random = new Random();
+        protected Brush brush = Brushes.Green;
+        private MainForm form;
         public Ball(MainForm form)
         {
-            Form = form;
+            this.form = form;
         }
 
         public void Show()
         {
-            var graphics = Form.CreateGraphics();
-            var rectangle = new Rectangle(X, Y, 50, 50);
-            graphics.FillEllipse(Brush, rectangle);
+            var graphics = form.CreateGraphics();
+            var rectangle = new Rectangle(x, y, 50, 50);
+            graphics.FillEllipse(brush, rectangle);
         }
-    }
 
-    class RandomPointBall : Ball
-    {
-        public RandomPointBall(MainForm form) : base(form)
+        public void Move()
         {
-            var random = new Random();
-            X = random.Next(0, 500);
-            Y = random.Next(0, 500);
-            Brush = Brushes.Red;
+            Clear();
+            Go();
+            Show();
         }
-    }
 
-    class PointBall : Ball
-    {
-        public PointBall(MainForm form, int x, int y) : base(form)
+        private void Go()
         {
-            X = x - 50 / 2;
-            Y = y - 50 / 2;
-            Brush = Brushes.Yellow;
+            x += vx;
+            y += vy;
+        }
+        
+        private void Clear()
+        {
+            var graphics = form.CreateGraphics();
+            var rectangle = new Rectangle(x, y, 50, 50);
+            graphics.FillEllipse(Brushes.White, rectangle);
         }
     }
 }
