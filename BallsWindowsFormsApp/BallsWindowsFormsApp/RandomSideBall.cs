@@ -10,8 +10,8 @@ namespace BallsWindowsFormsApp
     {
         public RandomSideBall(MainForm form, int x, int y) : base(form, x, y)
         {
-            vx = random.Next(-20, 20);
-            vy = random.Next(-20, 20);
+            vx = random.Next(-10, 10);
+            vy = random.Next(-10, 10);
         }
     }
 }

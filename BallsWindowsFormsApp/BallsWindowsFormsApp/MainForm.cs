@@ -13,13 +13,18 @@ namespace BallsWindowsFormsApp
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            ball.Move();
-        }        
+            timer.Start();
+        }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             ball = new RandomSideBall(this, e.X, e.Y);
             ball.Show();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            ball.Move();
         }
     }
 }
