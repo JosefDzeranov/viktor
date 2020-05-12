@@ -3,13 +3,14 @@ using System.Drawing;
 
 namespace BallsWindowsFormsApp
 {
+
     class Ball
     {
         protected int x = 100;
         protected int y = 100;
         protected int vx = 10;
         protected int vy = 10;
-        protected Random random = new Random();
+        protected static Random random = new Random();
         protected Brush brush = Brushes.Green;
         private MainForm form;
         public Ball(MainForm form)
@@ -36,7 +37,7 @@ namespace BallsWindowsFormsApp
             x += vx;
             y += vy;
         }
-        
+
         private void Clear()
         {
             var graphics = form.CreateGraphics();

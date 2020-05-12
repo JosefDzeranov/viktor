@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BallsWindowsFormsApp
 {
-    class RandomSideBall : PointBall
+    class RandomSideBall : RandomPointBall
     {
-        public RandomSideBall(MainForm form, int x, int y) : base(form, x, y)
+        public RandomSideBall(MainForm form) : base(form)
         {
             vx = random.Next(-10, 10);
             vy = random.Next(-10, 10);

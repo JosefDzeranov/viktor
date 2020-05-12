@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BallsWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        RandomSideBall ball;
+        List<RandomSideBall> balls;
 
         public MainForm()
         {
@@ -18,13 +19,30 @@ namespace BallsWindowsFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            ball = new RandomSideBall(this, e.X, e.Y);
-            ball.Show();
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            ball.Move();
+            foreach (var ball in balls)
+            {
+                ball.Move();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            balls = new List<RandomSideBall>();
+            for (int i = 0; i < 10; i++)
+            {
+                var ball = new RandomSideBall(this);
+                ball.Show();
+                balls.Add(ball);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
         }
     }
 }
