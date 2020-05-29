@@ -5,56 +5,36 @@ namespace NewPractiseBallsWindowsFormsApp
 {
     public class BilliardsBall : RandomSideBall
     {
-        private int up = 0;
-        private int down = 0;
-        private int left = 0;
-        private int right = 0;
-        public delegate void BallDelegat();
-        public event BallDelegat BallTouchFormSide;
+        public event EventHandler<TouchFormEvenArgs> OnTouchSide;
         public BilliardsBall(Form form) : base(form)
         {
-            vx = random.Next(-30, 30);
-            vy = random.Next(-30, 30);
-            timer.Tick += Timer_Tick;
-            BallTouchFormSide += MoveToOtherSide;
+            vx = random.Next(-10, 10);
+            vy = random.Next(-10, 10);
         }
-        private void Timer_Tick(object sender, EventArgs e)
+
+        protected override void Go()
         {
-            if (!OnScreen())
-            {
-               BallTouchFormSide();
-            }
-        }
-        public void MoveToOtherSide()
-        {
+            base.Go();
             if (y <= 0)
             {
                 vy *= -1;
-                up++;
+                OnTouchSide.Invoke(this, new TouchFormEvenArgs(Side.Top));
             }
             if (y >= (form.ClientSize.Height - size))
             {
                 vy *= -1;
-                down++;
+                OnTouchSide.Invoke(this, new TouchFormEvenArgs(Side.Down));
             }
             if (x >= (form.ClientSize.Width - size))
             {
                 vx *= -1;
-                right++;
+                OnTouchSide.Invoke(this, new TouchFormEvenArgs(Side.Right));
             }
             if (x <= 0)
             {
                 vx *= -1;
-                left++;
+                OnTouchSide.Invoke(this, new TouchFormEvenArgs(Side.Left));
             }
         }
-        public int UpSide()
-        { return up; }
-        public int DownSide()
-        { return down; }
-        public int LeftSide()
-        { return left; }
-        public int RightSide()
-        { return right; }
     }
 }

@@ -117,7 +117,6 @@
             this.Controls.Add(this.startBilliardMovingButton);
             this.Name = "BilliardForm";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BilliardForm_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

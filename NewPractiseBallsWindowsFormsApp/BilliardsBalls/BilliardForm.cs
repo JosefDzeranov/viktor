@@ -8,8 +8,10 @@ namespace BilliardsBalls
     public partial class BilliardForm : Form
     {
         List<BilliardsBall> balls;
-        private readonly Timer sideCountTimer = new Timer();
-        
+        int upSide = 0;
+        int downSide = 0;
+        int leftSide = 0;
+        int rightSide = 0;
         public BilliardForm()
         {
             InitializeComponent();
@@ -26,50 +28,56 @@ namespace BilliardsBalls
             {
                 var ball = new BilliardsBall(this);
                 ball.Show();
+                ball.OnTouchSide += Ball_OnTouchSide;
                 balls.Add(ball);
             }
             startBilliardMovingButton.Enabled = true;
             addBilliardBallsButton.Enabled = false;
-            upLabel.Text = "Количество отскоков ";
-            downLabel.Text = "Количество отскоков ";
-            leftLabel.Text = "Количество отскоков ";
-            rightLabel.Text = "Количество отскоков ";
+            UpdateSideTouches();
+        }
+
+        private void Ball_OnTouchSide(object sender, TouchFormEvenArgs e)
+        {
+            switch (e.Side)
+            {
+                case Side.Top:
+                    upSide++;
+                    break;
+                case Side.Down:
+                    downSide++;
+                    break;
+                case Side.Left:
+                    leftSide++;
+                    break;
+                case Side.Right:
+                    rightSide++;
+                    break;
+                default:
+                    break;
+            }
+            UpdateSideTouches();
+        }
+
+        private void UpdateSideTouches()
+        {
+            upLabel.Text = "Количество отскоков " + upSide;
+            downLabel.Text = "Количество отскоков " + downSide;
+            leftLabel.Text = "Количество отскоков " + leftSide;
+            rightLabel.Text = "Количество отскоков " + rightSide;
         }
 
         private void startBilliardMoving_Click(object sender, EventArgs e)
         {
-            
             foreach (var ball in balls)
             {
                 ball.Start();
             }
             startBilliardMovingButton.Enabled = false;
             endBilliardGameButton.Enabled = true;
-            sideCountTimer.Tick += Timer_Tick;
-            sideCountTimer.Start();
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            int upSide = 0;
-            int downSide = 0;
-            int leftSide = 0;
-            int rightSide = 0;
-            foreach (var ball in balls)
-            {
-                upLabel.Text = "Количество отскоков " + upSide;
-                downLabel.Text = "Количество отскоков " + downSide;
-                leftLabel.Text = "Количество отскоков " + leftSide;
-                rightLabel.Text = "Количество отскоков " + rightSide;
-                upSide += ball.UpSide();
-                downSide += ball.DownSide();
-                leftSide += ball.LeftSide();
-                rightSide += ball.RightSide();
-            }
         }
 
         private void endBilliardGame_Click(object sender, EventArgs e)
         {
-            sideCountTimer.Stop();
             foreach (var ball in balls)
             {
                 ball.StopMoving();
@@ -78,11 +86,6 @@ namespace BilliardsBalls
             Invalidate();
             endBilliardGameButton.Enabled = false;
             addBilliardBallsButton.Enabled = true;
-        }
-
-        private void BilliardForm_MouseClick(object sender, MouseEventArgs e)
-        {
-            var test = e.Location;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace NewPractiseBallsWindowsFormsApp
         public Ball(Form form)
         {
             this.form = form;
-            timer.Interval = 100;
+            timer.Interval = 20;
             timer.Tick += Timer_Tick;
             size = 50;
             radius = size / 2;
@@ -33,7 +33,7 @@ namespace NewPractiseBallsWindowsFormsApp
             rectangle = new Rectangle(x, y, size, size);
             graphics.FillEllipse(brush, rectangle);
         }
-        private void Go()
+        protected virtual void Go()
         {
             x += vx;
             y += vy;
