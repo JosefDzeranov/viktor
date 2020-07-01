@@ -14,9 +14,10 @@ namespace ClassLibrary3
         protected Brush brush = Brushes.Red;
         protected readonly Form form;
         protected readonly Timer timer = new Timer();
-        private Rectangle rectangle;
+        protected Rectangle rectangle;
         protected readonly int size;
         protected readonly double radius;
+        public Point Location => new Point(x, y);
        
         public Ball(Form form)
         {
@@ -27,7 +28,7 @@ namespace ClassLibrary3
             radius = size / 2;
         }
        
-        public void Show()
+        public virtual void Show()
         {
             Graphics graphics = form.CreateGraphics();
             rectangle = new Rectangle(x, y, size, size);
@@ -38,7 +39,7 @@ namespace ClassLibrary3
             x += vx;
             y += vy;
         }
-        protected void Clear()
+        protected virtual void Clear()
         {
             var graphics = form.CreateGraphics();
             SolidBrush solidBrush = new SolidBrush(form.BackColor);
@@ -74,6 +75,5 @@ namespace ClassLibrary3
         {
             return timer.Enabled;
         }
-       
     }
 }
