@@ -15,7 +15,7 @@ namespace ClassLibrary3
         protected readonly Form form;
         protected readonly Timer timer = new Timer();
         protected Rectangle rectangle;
-        protected readonly int size;
+        protected int size;
         protected readonly double radius;
         public Point Location => new Point(x, y);
        
@@ -51,7 +51,7 @@ namespace ClassLibrary3
             Go();
             Show();
         }
-        void Timer_Tick(object sender, EventArgs e)
+        protected virtual void Timer_Tick(object sender, EventArgs e)
         {
             Move();
         }

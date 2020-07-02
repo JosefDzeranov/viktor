@@ -14,18 +14,14 @@ namespace AngryBirdsWindowsFormsApp
     public partial class AngryBirdsForm : Form
     {
         AngryBall ball;
+        bool canMove = false;
         public AngryBirdsForm()
         {
             InitializeComponent();
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox2.BackColor = Color.Transparent;
         }
         private void startButton_Click(object sender, EventArgs e)
         {
-            ball = new AngryBall(this);
-            ball.Show();
             ball.Start();
-            ball.BallMoved += Ball_BallMoved;
         }
 
         private void Ball_BallMoved(object sender, EventArgs e)
@@ -35,11 +31,28 @@ namespace AngryBirdsWindowsFormsApp
 
         private void AngryBirdsForm_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox2.BackColor = Color.Transparent;
+            ball = new AngryBall(this);
+            ball.Show();
+            ball.BallMoved += Ball_BallMoved;
+        }
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            canMove = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
+            canMove = false;
+        }
+
+        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (canMove)
+            {
+                ball.Teleport(e.Location);
+            }
             
         }
     }
